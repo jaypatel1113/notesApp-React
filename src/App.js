@@ -52,14 +52,14 @@ const App = () => {
 	return (
 		<div className={`${darkMode && 'dark-mode'}`}>
 			<div className='container'>
-				<Header handleToggleDarkMode={setDarkMode} />
-				<Search handleSearchNote={setSearchText} />
+				<Header setDarkMode={setDarkMode} />
+				<Search setSearchText={setSearchText} />
 				<NotesList
 					notes={notes.filter((note) =>
-						note.text.toLowerCase().includes(searchText)
+						note.text.includes(searchText)
 					)}
-					handleAddNote={addNote}
-					handleDeleteNote={deleteNote}
+					addNote={addNote}
+					deleteNote={deleteNote}
 				/>
 			</div>
 		</div>
